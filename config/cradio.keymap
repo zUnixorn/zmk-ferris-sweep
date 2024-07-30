@@ -63,7 +63,7 @@
             &kp GRAVE  &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT       &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │  PRINT   │  |       │  /       │
-            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &PSCRN     &PIPE      &kp BSLH
+            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &kp PSCRN  &kp PIPE   &kp BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &kp ESC        &kp DEL    &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
