@@ -29,7 +29,7 @@
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
-        middle {
+        adjust {
             if-layers = <1 2>;
             then-layer = <3>;
         };
@@ -37,8 +37,8 @@
 
     keymap {
         compatible = "zmk,keymap";
-        default {
-            display-name = "Default";
+        base {
+            display-name = "Base";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
@@ -55,8 +55,8 @@
             >;
         };
 
-        right {
-            display-name = "Right";
+        raise {
+            display-name = "Raise";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  ~       │  _       │  +       │  {       │  }       │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │  "       │
@@ -73,8 +73,8 @@
             >;
         };
 
-        left {
-            display-name = "Left";
+        lower {
+            display-name = "Lower";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  !       │  @       │  #       │  $       │  %       │   │  ^       │  &       │  *       │  (       │  )       │
@@ -91,8 +91,8 @@
             >;
         };
 
-        middle {
-            display-name = "Middle";
+        adjust {
+            display-name = "Adjust";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  F1      │  F2      │  F3      │  F4      │  F5      │   │  F6      │  F7      │  F8      │  F9      │  F10     │
@@ -102,7 +102,7 @@
             &kp F11    &kp F12    &kp F13    &kp F14    &kp F15    &kp C_PREV &kp C_VOL_UP &kp C_VOL_DN &kp C_NEXT &kp C_PP
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &trans     &trans     &trans     &trans     &out OUT_TOG   &bt BT_CLR &trans     &trans     &trans     &trans
+            &trans     &trans     &trans     &bt BT_PRV &out OUT_TOG   &bt BT_CLR &bt BT_NXT &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
