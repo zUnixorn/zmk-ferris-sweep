@@ -13,6 +13,7 @@
 
 &sk {
     quick-release;
+    lazy;
 };
 
 / {
