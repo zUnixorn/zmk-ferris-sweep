@@ -7,8 +7,8 @@
 #include <dt-bindings/zmk/outputs.h>
 
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LCTRL k1  &ht LALT k2  &ht RALT k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RGUI k1   &ht RALT k2  &ht LALT k3  &ht RCTRL k4
+// #define HRML(k1,k2,k3,k4) &ht LCTRL k1  &ht LALT k2  &ht RALT k3  &ht LGUI k4
+// #define HRMR(k1,k2,k3,k4) &ht RGUI k1   &ht RALT k2  &ht LALT k3  &ht RCTRL k4
 
 #define STL(k) &ht LSHFT k
 #define STR(k) &ht RSHFT k
@@ -45,12 +45,13 @@
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ; :      │
-            HRML(A,        S,         D,         F)     &kp G          &kp H      HRMR(J,        K,         L,        SEMI)
+            &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            STL(Z)     &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    STR(FSLH)
+            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 2 TAB   CTL(SPACE)     STL(BSPC)  &lt 1 RET
+        //                                 │LT(2, TAB)│CTL(SPACE)│   │ STL(BSPC)│LT(1, RET)│
+                                            &lt 2 TAB  CTL(SPACE)      STL(BSPC)  &lt 1 RET
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -65,9 +66,10 @@
         //│  `       │  -       │  =       │  [       │  ]       │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │  '       │
             &kp GRAVE  &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT       &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │  PRINT   │  |       │  /       │
-            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &kp PSCRN  &kp PIPE   &kp BSLH
+        //│   LCTRL  │   LALT   │   LGUI   │   LSHFT  │   |      │   │  \       │   RSHFT  │   RGUI   │   RALT   │   LCTRL  │
+            &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHFT  &kp PIPE       &kp BSLH   &kp RSHFT  &kp RGUI   &kp RALT   &kp LCTRL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                                 │          │    ESC   │   │    DEL   │          │
                                              &trans     &kp ESC        &kp DEL    &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
@@ -86,6 +88,7 @@
         //│          │          │          │          │          │   │          │          │          │          │          │
             &trans     &trans     &trans     &trans     &trans         &trans    &trans     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                                 │          │          │   │          │          │
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
@@ -101,9 +104,10 @@
         //│  F11     │  F12     │  F13     │  F14     │  F15     │   │ PREVIOUS │ VOL_UP   │ VOL_DOWN │  NEXT    │PAUSE/PLAY│
             &kp F11    &kp F12    &kp F13    &kp F14    &kp F15    &kp C_PREV &kp C_VOL_UP &kp C_VOL_DN &kp C_NEXT &kp C_PP
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &trans     &trans     &trans     &bt BT_PRV &out OUT_TOG   &bt BT_CLR &bt BT_NXT &trans     &trans     &trans
+        //│          │          │          │          │          │   │          │          │          │          │  PSCRN   │
+            &trans     &trans     &trans     &bt BT_PRV &out OUT_TOG   &bt BT_CLR &bt BT_NXT &trans     &trans     &kp PSCRN
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                                 │          │          │   │          │          │
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
