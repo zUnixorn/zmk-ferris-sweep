@@ -80,8 +80,8 @@
         //│  `       │  -       │  =       │  [       │  ]       │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │  '       │
             &kp GRAVE  &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT       &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│   LGUI   │   LALT   │   LCTRL  │   LSHFT  │  |       │   │  \       │   RSHFT  │   RCTRL  │   RALT   │   LGUI   │
-           SKH(LGUI)  SKH(LALT)  SKH(LCTRL) SKH(LSHFT)  &kp PIPE       &kp BSLH  SKH(RSHFT) SKH(RCTRL)  SKH(RALT) SKH(LGUI)
+        //│   LCTRL  │   LALT   │   LGUI   │   LSHFT  │  |       │   │  \       │   RSHFT  │   RGUI   │   RALT   │   LCTRL  │
+           SKH(LCTRL)  SKH(LALT)  SKH(LGUI) SKH(LSHFT)  &kp PIPE       &kp BSLH  SKH(RSHFT)  SKH(RGUI)  SKH(RALT) SKH(LCTRL)
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │          │    ESC   │   │    DEL   │          │
                                              &trans     &kp ESC        &kp DEL    &trans
@@ -99,8 +99,8 @@
         //│  1       │  2       │  3       │  4       │  5       │   │  6       │  7       │  8       │  9       │  0       │
             &kp N1     &kp N2     &kp N3     &kp N4     &kp N5         &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│   LGUI   │   LALT   │   LCTRL  │   LSHFT  │  |       │   │  \       │   RSHFT  │   RCTRL  │   RALT   │   LGUI   │
-           SKH(LGUI)  SKH(LALT)  SKH(LCTRL) SKH(LSHFT)  &kp PIPE       &kp BSLH  SKH(RSHFT) SKH(RCTRL)  SKH(RALT) SKH(LGUI)
+        //│   LCTRL  │   LALT   │   LGUI   │   LSHFT  │  |       │   │  \       │   RSHFT  │   RGUI   │   RALT   │   LCTRL  │
+           SKH(LCTRL)  SKH(LALT)  SKH(LGUI) SKH(LSHFT)  &kp PIPE       &kp BSLH  SKH(RSHFT)  SKH(RGUI)  SKH(RALT) SKH(LCTRL)
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │          │    ESC   │   │    DEL   │          │
                                              &trans     &kp ESC        &kp DEL    &trans
