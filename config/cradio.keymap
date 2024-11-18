@@ -11,6 +11,10 @@
 #define CTL(k) &ht LCTRL k
 #define SKH(k) &skh k k
 
+&sk {
+    quick-release;
+};
+
 / {
     behaviors {
         ht: hold_tap {
