@@ -6,14 +6,9 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-// Home row mods macro
-// #define HRML(k1,k2,k3,k4) &ht LCTRL k1  &ht LALT k2  &ht RALT k3  &ht LGUI k4
-// #define HRMR(k1,k2,k3,k4) &ht RGUI k1   &ht RALT k2  &ht LALT k3  &ht RCTRL k4
-
 #define STL(k) &ht LSHFT k
 #define STR(k) &ht RSHFT k
 #define CTL(k) &ht LCTRL k
-
 #define SKH(k) &skh k k
 
 / {
@@ -67,8 +62,6 @@
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
-
-        // FIXME &trans should work so line 91 shouldn't need to explicitly copy the bindings from raise ...
 
         raise {
             display-name = "Raise";
