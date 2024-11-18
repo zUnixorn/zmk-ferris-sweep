@@ -14,6 +14,8 @@
 #define STR(k) &ht RSHFT k
 #define CTL(k) &ht LCTRL k
 
+#define SKH(k) &skh k k
+
 / {
     behaviors {
         ht: hold_tap {
@@ -24,6 +26,16 @@
             quick-tap-ms = <150>;
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
+        };
+
+        skh: sticky_key_hold {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <220>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <100>;
+            bindings = <&kp>, <&sk>;
         };
     };
 
@@ -68,8 +80,8 @@
         //│  `       │  -       │  =       │  [       │  ]       │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │  '       │
             &kp GRAVE  &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT       &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│   LCTRL  │   LALT   │   LGUI   │   LSHFT  │   |      │   │  \       │   RSHFT  │   RGUI   │   RALT   │   LCTRL  │
-            &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHFT  &kp PIPE       &kp BSLH   &kp RSHFT  &kp RGUI   &kp RALT   &kp LCTRL
+        //│   LCTRL  │   LALT   │   LGUI   │   LSHFT  │  |       │   │  \       │   RSHFT  │   RGUI   │   RALT   │   LCTRL  │
+           SKH(LCTRL)  SKH(LALT)  SKH(LGUI) SKH(LSHFT)  &kp PIPE       &kp BSLH  SKH(RSHFT)  SKH(RGUI)  SKH(RALT) SKH(LCTRL)
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │          │    ESC   │   │    DEL   │          │
                                              &trans     &kp ESC        &kp DEL    &trans
@@ -87,8 +99,8 @@
         //│  1       │  2       │  3       │  4       │  5       │   │  6       │  7       │  8       │  9       │  0       │
             &kp N1     &kp N2     &kp N3     &kp N4     &kp N5         &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│   LCTRL  │   LALT   │   LGUI   │   LSHFT  │   |      │   │  \       │   RSHFT  │   RGUI   │   RALT   │   LCTRL  │
-            &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHFT  &kp PIPE       &kp BSLH   &kp RSHFT  &kp RGUI   &kp RALT   &kp LCTRL
+        //│   LCTRL  │   LALT   │   LGUI   │   LSHFT  │  |       │   │  \       │   RSHFT  │   RGUI   │   RALT   │   LCTRL  │
+           SKH(LCTRL)  SKH(LALT)  SKH(LGUI) SKH(LSHFT)  &kp PIPE       &kp BSLH  SKH(RSHFT)  SKH(RGUI)  SKH(RALT) SKH(LCTRL)
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │          │    ESC   │   │    DEL   │          │
                                              &trans     &kp ESC        &kp DEL    &trans
