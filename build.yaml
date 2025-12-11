@@ -18,9 +18,9 @@
 #
 ---
 include:
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: cradio_left nicehatharry nice_view
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: cradio_right nicehatharry nice_view
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: settings_reset
