@@ -17,6 +17,7 @@ manifest:
       revision: main
     - name: zmk-nice-view-custom
       remote: zunixorn
+      clone-depth: 1
       revision: main
   self:
     path: config
