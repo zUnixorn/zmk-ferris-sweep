@@ -15,5 +15,8 @@ manifest:
       remote: davidphilipbarr
       clone-depth: 1
       revision: main
+    - name: zmk-nice-view
+      remote: zUnixorn
+      revision: master
   self:
     path: config
