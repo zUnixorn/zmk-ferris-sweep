@@ -2,10 +2,10 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    # Additional modules containing boards/shields/custom code can be listed here as well
-    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
     - name: davidphilipbarr
       url-base: https://github.com/davidphilipbarr
+    - name: zunixorn
+      url-base: https://github.com/zUnixorn
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -15,8 +15,8 @@ manifest:
       remote: davidphilipbarr
       clone-depth: 1
       revision: main
-    - name: zmk-nice-view
-      remote: zUnixorn
-      revision: master
+    - name: zmk-nice-view-custom
+      remote: zunixorn
+      revision: main
   self:
     path: config
