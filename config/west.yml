@@ -18,6 +18,6 @@ manifest:
     - name: zmk-nice-view-custom
       remote: zunixorn
       clone-depth: 1
-      revision: main
+      revision: no-wpm
   self:
     path: config
