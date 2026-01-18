@@ -19,8 +19,8 @@ manifest:
       remote: zunixorn
       clone-depth: 1
       revision: no-wpm
-    - name: zmk-oneshot-mod
-      remote: zunixorn
-      clone-depth: 1
+    # - name: zmk-oneshot-mod
+    #   remote: zunixorn
+    #   clone-depth: 1
   self:
     path: config
