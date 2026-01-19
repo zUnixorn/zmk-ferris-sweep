@@ -18,6 +18,18 @@
         };
     };
 
+    behaviors {
+        sk: sticky_key {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            release-after-ms = <__UINT32_MAX__>;
+            bindings = <&kp>;
+            ignore-modifiers;
+            toggling;
+            display-name = "Sticky Key";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
